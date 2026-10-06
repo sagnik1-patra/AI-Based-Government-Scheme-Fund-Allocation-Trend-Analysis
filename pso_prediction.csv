@@ -1,0 +1,8 @@
+﻿Scheme,Actual_Trend,PSO_Predicted_Trend,Correct_Prediction,Actual_Encoded,PSO_Predicted_Encoded
+SCA to TSS,Fluctuating,Decreasing,False,1,0
+Grant under Article 275(1) of constitution,Decreasing,Fluctuating,False,0,1
+Institutional Support Scheme MFP for MSP,Stable,Decreasing,False,3,0
+Pre Matric Scholarship,Stable,Fluctuating,False,3,1
+Post matric Scholarship,Increasing,Decreasing,False,2,0
+Grants to PVTG,Fluctuating,Decreasing,False,1,0
+Support to TRIs,Decreasing,Stable,False,0,3

@@ -1,0 +1,52 @@
+project:
+  name: AI-Based Government Scheme Fund Allocation Trend Analysis
+  task: Government Scheme Funding Trend Classification
+  version: '1.0'
+dataset:
+  file: RS_Session_256_AU_3172_C.csv
+  path: C:\Users\sagni\Downloads\AI-Based Government Scheme Fund Allocation Trend
+    Analysis\RS_Session_256_AU_3172_C.csv
+  rows: 7
+  financial_years:
+  - 2018-19
+  - 2019-20
+  - 2020-21
+trend_classification:
+  classes:
+  - Decreasing
+  - Fluctuating
+  - Increasing
+  - Stable
+  stable_threshold_percent: 5.0
+features:
+- 2018-19
+- 2019-20
+- 2020-21
+- Total_Allocation
+- Average_Allocation
+- Minimum_Allocation
+- Maximum_Allocation
+- Std_Allocation
+- Growth_2018_2019
+- Growth_2019_2020
+- Overall_Growth
+- Growth_Percent_2018_2019
+- Growth_Percent_2019_2020
+- Overall_Growth_Percent
+- Trend_Slope
+- Coefficient_of_Variation
+random_forest:
+  n_estimators: 200
+  random_state: 42
+  class_weight: balanced
+  training_accuracy: 1.0
+neural_network:
+  h5_generated: true
+  epochs: 150
+  batch_size: 2
+  training_accuracy: 1.0
+output_files:
+  pkl: government_scheme_model.pkl
+  h5: government_scheme_model.h5
+  yaml: config.yaml
+  json: metadata.json

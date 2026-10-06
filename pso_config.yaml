@@ -1,0 +1,31 @@
+project:
+  name: AI-Based Government Scheme Fund Allocation Trend Analysis
+  optimization: Particle Swarm Optimization
+  algorithm: Binary Particle Swarm Optimization
+  classifier: Random Forest
+dataset:
+  filename: RS_Session_256_AU_3172_C.csv
+  path: C:\Users\sagni\Downloads\AI-Based Government Scheme Fund Allocation Trend
+    Analysis\RS_Session_256_AU_3172_C.csv
+  rows: 7
+  financial_years:
+  - 2018-19
+  - 2019-20
+  - 2020-21
+pso_parameters:
+  number_of_particles: 30
+  iterations: 30
+  inertia_weight: 0.729
+  cognitive_coefficient: 1.49445
+  social_coefficient: 1.49445
+features:
+  total_features: 16
+  selected_feature_count: 1
+  selected_features:
+  - Total_Allocation
+performance:
+  best_pso_fitness: 0.996875
+  training_accuracy: 1.0
+  loocv_accuracy: 0.0
+  baseline_training_accuracy: 1.0
+  baseline_loocv_accuracy: 0.0

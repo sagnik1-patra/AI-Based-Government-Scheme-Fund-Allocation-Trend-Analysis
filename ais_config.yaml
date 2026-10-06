@@ -1,0 +1,27 @@
+project:
+  name: AI-Based Government Scheme Fund Allocation Trend Analysis
+  optimization: Artificial Immune System
+  ais_algorithm: Clonal Selection
+  classifier: Random Forest
+dataset:
+  filename: RS_Session_256_AU_3172_C.csv
+  path: C:\Users\sagni\Downloads\AI-Based Government Scheme Fund Allocation Trend
+    Analysis\RS_Session_256_AU_3172_C.csv
+  rows: 7
+ais_parameters:
+  population_size: 30
+  generations: 25
+  clone_factor: 5
+  mutation_rate: 0.15
+  elite_count: 5
+  random_new_antibodies: 5
+features:
+  total_features: 16
+  selected_feature_count: 1
+  selected_features:
+  - Overall_Growth_Percent
+performance:
+  best_fitness: 0.996875
+  training_accuracy: 1.0
+  loocv_accuracy: 0.2857142857142857
+  baseline_loocv_accuracy: 0.0

@@ -1,0 +1,132 @@
+{
+    "project_name": "AI-Based Government Scheme Fund Allocation Trend Analysis",
+    "description": "Analysis and classification of government scheme fund allocation patterns across multiple financial years.",
+    "created_at": "2026-10-06 16:16:10",
+    "dataset": {
+        "filename": "RS_Session_256_AU_3172_C.csv",
+        "rows": 7,
+        "original_columns": [
+            "Name of scheme",
+            "2018-19",
+            "2019-20",
+            "2020-21"
+        ],
+        "financial_years": [
+            "2018-19",
+            "2019-20",
+            "2020-21"
+        ]
+    },
+    "features": [
+        "2018-19",
+        "2019-20",
+        "2020-21",
+        "Total_Allocation",
+        "Average_Allocation",
+        "Minimum_Allocation",
+        "Maximum_Allocation",
+        "Std_Allocation",
+        "Growth_2018_2019",
+        "Growth_2019_2020",
+        "Overall_Growth",
+        "Growth_Percent_2018_2019",
+        "Growth_Percent_2019_2020",
+        "Overall_Growth_Percent",
+        "Trend_Slope",
+        "Coefficient_of_Variation"
+    ],
+    "target": "Trend_Class",
+    "classes": [
+        "Decreasing",
+        "Fluctuating",
+        "Increasing",
+        "Stable"
+    ],
+    "class_mapping": {
+        "0": "Decreasing",
+        "1": "Fluctuating",
+        "2": "Increasing",
+        "3": "Stable"
+    },
+    "class_distribution": {
+        "Fluctuating": 2,
+        "Decreasing": 2,
+        "Stable": 2,
+        "Increasing": 1
+    },
+    "model": {
+        "primary_model": "RandomForestClassifier",
+        "training_accuracy": 1.0,
+        "h5_model_generated": true,
+        "neural_network_training_accuracy": 1.0
+    },
+    "h5_scaler": {
+        "mean": [
+            9273.605714285713,
+            6930.948571428571,
+            6151.567142857143,
+            22356.12142857143,
+            7452.0404761904765,
+            5347.8214285714275,
+            9949.850000000002,
+            2417.1663723497527,
+            -2342.6571428571433,
+            -779.3814285714287,
+            -3122.038571428571,
+            -21.868769724732825,
+            -19.9239844994027,
+            -27.35961293648644,
+            -1561.0192857142858,
+            0.5551076636407059
+        ],
+        "scale": [
+            7960.0140973347125,
+            6369.58319467144,
+            6217.829276383277,
+            19141.24454323955,
+            6380.414847746518,
+            4975.802893243687,
+            8467.73742909943,
+            2651.5293288161106,
+            3605.1767086935038,
+            3384.8519100690296,
+            6078.0491955453435,
+            28.408200545543938,
+            42.77449241122834,
+            35.71963154469909,
+            3039.0245977726704,
+            0.5299955923144299
+        ],
+        "var": [
+            63361824.429767355,
+            40571590.07384082,
+            38661400.91024899,
+            366387242.6640979,
+            40709693.62934422,
+            24758614.432412248,
+            71702577.16817144,
+            7030607.781572015,
+            12997299.100906124,
+            11457222.453097958,
+            36942682.023469396,
+            807.0258582358429,
+            1829.6572010382308,
+            1275.8920776890623,
+            9235670.505867342,
+            0.2808953278727235
+        ]
+    },
+    "trend_rules": {
+        "increasing": "2018-19 < 2019-20 < 2020-21 and overall change exceeds stable threshold",
+        "decreasing": "2018-19 > 2019-20 > 2020-21 and overall change exceeds stable threshold",
+        "stable": "Absolute overall growth percentage <= 5.0%",
+        "fluctuating": "Values do not continuously increase or decrease"
+    },
+    "output_files": {
+        "government_scheme_model.pkl": "Random Forest model, preprocessing pipeline, features and label encoder",
+        "government_scheme_model.h5": "Keras neural network model",
+        "config.yaml": "Project and model configuration",
+        "metadata.json": "Dataset and model metadata"
+    },
+    "warning": "The source dataset contains very few records. Training accuracy should not be interpreted as evidence of real-world predictive performance."
+}
